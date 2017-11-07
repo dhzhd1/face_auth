@@ -1,4 +1,5 @@
 # coding=utf-8
+from __future__ import print_function
 
 from wtforms import Form, BooleanField, DateTimeField, PasswordField, SelectField
 from wtforms import StringField, SubmitField, Label, IntegerField
@@ -39,4 +40,9 @@ class FaceFeatureMapForm(Form):
 	memo = TextAreaField('Memo', [Length(max=1024)])
 
 
+if __name__ == "__main__":
+	form = RegisteredUsersForm()
+	print("Registered Users Form Demo")
+	print(form.user_id.label)
+	print(form.user_id)
 
