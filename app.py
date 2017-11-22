@@ -1,8 +1,14 @@
 # coding=utf-8
 
 from flask import Flask,url_for
-from flask.ext.sqlalchemy import SQLAlchemy
+# from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from models import Base, RegisteredUsers, FaceFeatureMap, UserRights
+from flask import render_template
+import cv2
+import numpy as np
+from capture import Capture
+
 
 
 import argparse
@@ -25,9 +31,15 @@ def args_parse():
 def hello():
 	return 'Hello World!'
 
-@app.route('/auth_demo/')
-def auth_demo():
-	return 'This is a Demo Page for Face Authentication Function'
+@app.route('/login_demo/')
+def show_login_demo():
+	return render_template('login_auth.html')
+
+@app.route('/login_demo/#scan')
+def start_scan_face():
+	inst_capture = Capture()
+	image = inst_capture.start()
+
 
 @app.route('/user/add/', methods=['GET', 'POST'])
 def add_user():

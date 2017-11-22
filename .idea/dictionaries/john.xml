@@ -2,7 +2,12 @@
   <dictionary name="john">
     <words>
       <w>addr</w>
+      <w>binaryproto</w>
+      <w>caffe</w>
+      <w>caffemodel</w>
+      <w>endblock</w>
       <w>passwd</w>
+      <w>prototxt</w>
       <w>sqlalchemy</w>
       <w>sqlite</w>
       <w>tablename</w>
